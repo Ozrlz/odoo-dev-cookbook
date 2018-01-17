@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <act_window
+            id="library_book_action"
+            name="Library Books Action"
+            res_model="library.book"
+            />
+        <menuitem
+            id="library_book_menu"
+            name="Library Menu Name"
+            action="library_1.library_book_action"
+            parent=""
+            sequence="5"
+            />
+    </data>
+</odoo>
