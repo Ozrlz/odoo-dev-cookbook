@@ -27,6 +27,9 @@ class LibraryBook(models.Model):
 
     """
     _name = 'library.book'
+    _inherit = [
+            'base.archive',
+        ]
     _description = 'Library Book'
     _order = 'date_released desc, name'
     _rec_name = 'short_name'
