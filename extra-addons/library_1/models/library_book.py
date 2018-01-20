@@ -35,7 +35,6 @@ class LibraryBook(models.Model):
     _rec_name = 'short_name'
     short_name = fields.Char(string="Short title")
 
-
     name = fields.Char('Title', required=True)
     date_released = fields.Date('Release date')
     author_ids = fields.Many2many(
