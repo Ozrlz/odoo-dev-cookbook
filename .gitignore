@@ -1,0 +1,5 @@
+# All pyc files
+*.pyc
+
+# Dummy script
+script_test_1.py

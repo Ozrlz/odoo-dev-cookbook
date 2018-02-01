@@ -9,12 +9,15 @@
         <field name="arch" type="xml">
             <form>
                 <group>
-                    <field name="name"/>
-                    <field name="short_name"/>
-                    <field name="author_ids" widget="many2many_tags"/>
-                </group>
-                <group>
-                    <field name="date_released"/>
+                    <group>
+                        <field name="name"/>
+                        <field name="short_name"/>
+                        <field name="author_ids" widget="many2many_tags"/>
+                    </group>
+                    <group>
+                        <field name="date_released"/>
+                        <field name="isbn" />
+                    </group>
                 </group>
             </form>
         </field>
@@ -44,6 +47,16 @@
     </record>
 
 
+    <record id="view_res_partner_form_inherited" model="ir.ui.view"> 
+        <field name="name">view_res_partner_form_inherited</field> 
+        <field name="model">res.partner</field> 
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml"> 
+            <field name="website" position="after">
+                <field name="authored_book_ids" widget="many2many_tags"/>
+            </field>
+        </field>
+    </record>
 
 
     <!-- actions opening views on models -->
