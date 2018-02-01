@@ -19,6 +19,14 @@ class ResPartner(models.Model):
             string='Number of authored books',
             compute='_compute_count_books',
         )
+
+    name = fields.Char('Name', required=True)
+    email = fields.Char('Email')
+    date = fields.Date('Date')
+    is_company = fields.Boolean('Is a company')
+    parent_id = fields.Many2one('res.partner', 'Related Company')
+    child_ids = fields.One2many('res.partner', 'parent_id',
+        'Contacts')        
     @api.depends('authored_book_ids')
     def _compute_count_books(self):
         for record in self:

@@ -8,7 +8,7 @@ services:
         depends_on:
           - db
         ports:
-          - "8070:8069"
+          - "8072:8069"
         volumes:
           - "odoo-web-data-cookbook:/var/lib/odoo"
           - "./extra-addons:/mnt/extra-addons/"
